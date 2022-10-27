@@ -33,7 +33,7 @@ private void OnCollisionEnter(Collision collision) {
 }
 ```
 
-**Video**
+![Gif](gif/Ejer1.gif)
 
 #### Ejercicio 2
 
@@ -59,4 +59,4 @@ for (int i = 0; i < tipoC.Length; i++) {
 }
 ```
 
-**video**
+![Gif](gif/Ejer2.gif)
