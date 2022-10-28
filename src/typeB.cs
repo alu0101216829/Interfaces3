@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class typeB : MonoBehaviour
 {
-
+  public delegate void mensaje();
   public characterController notificar;
   // Start is called before the first frame update
   void Start()
@@ -22,8 +22,8 @@ public class typeB : MonoBehaviour
     gameObject.transform.LookAt(GameObject.FindWithTag("tipoC").transform);
   }
 
-  private void OnCollisionEnter(Collision colission) {
-    if (colission.gameObject.tag == "Player") {
+  /*private void OnCollisionEnter(Collision colission) {
+    /*if (colission.gameObject.tag == "Player") {
       gameObject.GetComponent<Renderer>().material.color = Random.ColorHSV();
       GameObject[] tipoA = GameObject.FindGameObjectsWithTag("tipoA");
       for (int i = 0; i < tipoA.Length; i++) {
@@ -33,7 +33,5 @@ public class typeB : MonoBehaviour
         tipoA[i].GetComponent<Rigidbody>().velocity = directions * Time.deltaTime * 10f;             // forward
       }
     }
-  }
-
-  
+  }*/
 }
