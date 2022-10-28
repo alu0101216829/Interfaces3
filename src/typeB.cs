@@ -5,7 +5,7 @@ using UnityEngine;
 public class typeB : MonoBehaviour
 {
 
-  //public characterController notificar;
+  public characterController notificar;
   // Start is called before the first frame update
   void Start()
   {
@@ -15,12 +15,12 @@ public class typeB : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    //notificar.Orientar +=  miRespuesta; 
+    notificar.Orientar +=  miRespuesta; 
   }
 
-  /*void miRespuesta(){
-    gameObject.GetComponent<Renderer>().material.color = Random.ColorHSV();
-  }*/
+  void miRespuesta(){
+    gameObject.transform.LookAt(GameObject.FindWithTag("tipoC").transform);
+  }
 
   private void OnCollisionEnter(Collision colission) {
     if (colission.gameObject.tag == "Player") {
