@@ -71,15 +71,15 @@ public class characterController : MonoBehaviour
       if (distancia < 3f) {
         GameObject[] tipoA = GameObject.FindGameObjectsWithTag("tipoA");
         GameObject[] tipoB = GameObject.FindGameObjectsWithTag("tipoB");
-        for(int j = 0; j < tipoA.Length; j++) {
+        /*for(int j = 0; j < tipoA.Length; j++) {
           tipoA[j].GetComponent<Renderer>().material.color = Random.ColorHSV();
           tipoA[j].GetComponent<Rigidbody>().AddForce(0,5,0);
-        }
-        for (int j = 0; j < tipoB.Length; j++) {
+        }*/
+        /*for (int j = 0; j < tipoB.Length; j++) {
           tipoB[j].transform.LookAt(GameObject.FindWithTag("tipoC").transform);
-        }
-        //salto();
-        //Orientar();
+        }*/
+        Salto();
+        Orientar();
       }
     }
   }
