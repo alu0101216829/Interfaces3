@@ -7,6 +7,7 @@ public class characterController : MonoBehaviour
   public delegate void mensaje();
   public event mensaje Salto;
   public event mensaje Orientar;
+  public event mensaje move;
 
     // Start is called before the first frame update
   [Header("Personaje")]
@@ -69,8 +70,8 @@ public class characterController : MonoBehaviour
     for (int i = 0; i < tipoC.Length; i++) {
       float distancia = Vector3.Distance(tipoC[i].transform.position, gameObject.transform.position);
       if (distancia < 3f) {
-        GameObject[] tipoA = GameObject.FindGameObjectsWithTag("tipoA");
-        GameObject[] tipoB = GameObject.FindGameObjectsWithTag("tipoB");
+        //GameObject[] tipoA = GameObject.FindGameObjectsWithTag("tipoA");
+        //GameObject[] tipoB = GameObject.FindGameObjectsWithTag("tipoB");
         /*for(int j = 0; j < tipoA.Length; j++) {
           tipoA[j].GetComponent<Renderer>().material.color = Random.ColorHSV();
           tipoA[j].GetComponent<Rigidbody>().AddForce(0,5,0);
@@ -81,6 +82,22 @@ public class characterController : MonoBehaviour
         Salto();
         Orientar();
       }
+    }
+  }
+
+  private void OnCollisionEnter(Collision colission) {
+    /*if (colission.gameObject.tag == "Player") {
+      gameObject.GetComponent<Renderer>().material.color = Random.ColorHSV();
+      GameObject[] tipoA = GameObject.FindGameObjectsWithTag("tipoA");
+      for (int i = 0; i < tipoA.Length; i++) {
+        tipoA[i].transform.LookAt(GameObject.FindWithTag("tipoC").transform);
+        Vector3 directions = GameObject.FindWithTag("tipoC").transform.position - tipoA[i].GetComponent<Transform>().position;
+        //Debug.DrawRay(gameObject.GetComponent<Transform>().position, directions, Color.red);
+        tipoA[i].GetComponent<Rigidbody>().velocity = directions * Time.deltaTime * 10f;             // forward
+      }
+    }*/
+    if (colission.gameObject.tag == "tipoB") {
+      move();
     }
   }
 }
