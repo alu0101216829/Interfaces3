@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class typeA : MonoBehaviour
 {
-  //public characterController notificar;
+  public characterController notificar;
   // Start is called before the first frame update
   void Start()
   {
@@ -14,7 +14,7 @@ public class typeA : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-//    notificar.salto += miRespuesta;
+    notificar.Salto += miRespuesta;
   }
 
   private void OnCollisionEnter(Collision collision) {
@@ -27,8 +27,8 @@ public class typeA : MonoBehaviour
     }
   }
 
-  /*void miRespuesta() {
+  void miRespuesta() {
     gameObject.GetComponent<Renderer>().material.color = Random.ColorHSV();
-    //gameObject.GetComponent<Rigidbody>().AddForce(0,500,0);
-  }*/
+    gameObject.GetComponent<Rigidbody>().AddForce(0, 0.01f, 0);
+  }
 }
