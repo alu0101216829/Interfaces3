@@ -15,6 +15,7 @@ public class typeA : MonoBehaviour
   void Update()
   {
     notificar.Salto += miRespuesta;
+    notificar.move += mover;
   }
 
   private void OnCollisionEnter(Collision collision) {
@@ -30,5 +31,11 @@ public class typeA : MonoBehaviour
   void miRespuesta() {
     gameObject.GetComponent<Renderer>().material.color = Random.ColorHSV();
     gameObject.GetComponent<Rigidbody>().AddForce(0, 0.01f, 0);
+  }
+  void mover() {
+    gameObject.transform.LookAt(GameObject.FindWithTag("tipoC").transform);
+    Vector3 directions = GameObject.FindWithTag("tipoC").transform.position - gameObject.GetComponent<Transform>().position;
+    //Debug.DrawRay(gameObject.GetComponent<Transform>().position, directions, Color.red);
+    gameObject.GetComponent<Rigidbody>().velocity = directions * Time.deltaTime * 10f;
   }
 }
